@@ -157,13 +157,6 @@ footer p {
   }
 }
 
-.signin {
-  width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  margin: auto;
-}
-
 #spinner-wrapper {
   position: fixed;
   background-color: rgba(0, 0, 0, 0.5);
@@ -187,4 +180,45 @@ a.custom-card:hover {
 
 .checked {
   color: orange;
+}
+
+
+/* Estilos del formulario de ingreso */
+
+.signin {
+  width: 100%;
+  max-width: 500px;
+  padding: 15px;
+  margin: auto;
+}
+
+.login-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.login-img > img {
+  width: 400px;
+}
+
+.form-setting > label {
+  display: block;
+}
+
+.form-setting > input {
+  width: 50%;
+  height: 40px;
+  margin: 5px auto;
+}
+
+.signin input[type="button"] {
+  display: block;
+  width: 100px;
+  height: 40px;
+  background: #229fbc;
+  border-radius: 5px;
+  border-style: none;
+  font-weight: bold;
+  color: #fff;
 }
