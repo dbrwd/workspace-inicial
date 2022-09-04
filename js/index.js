@@ -11,4 +11,12 @@ document.addEventListener("DOMContentLoaded", function(){
         localStorage.setItem("catID", 103);
         window.location = "products.html"
     });
+
+    usuarioEnPantalla();
 });
+
+//función que muestra el nombre de usuario en la barra de navegación.
+function usuarioEnPantalla() {
+    let userId = localStorage.getItem("userID");
+    document.getElementById("user-id").innerText = userId;
+}
