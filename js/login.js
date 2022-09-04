@@ -18,5 +18,7 @@ function validarIngreso() {
 
 // Función que redirige al usuario a la página principal del E-commerce.
 function redirigir() {
+    localStorage.setItem("userID", document.getElementById("email-login").value);
     window.location.href="postLoginIndex.html";
+
 }
