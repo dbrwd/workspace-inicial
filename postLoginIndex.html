@@ -33,8 +33,17 @@
           </li>
         </ul>
       </div>
-      <div>
-        <a id="user-id" class="text-white" href="#"></a>
+      <!-- Menú desplegable del usuario -->
+      <div class="dropdown">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="user-id" data-bs-toggle="dropdown" aria-expanded="false">
+          Menú
+        </a>
+      
+        <ul class="dropdown-menu" aria-labelledby="user-id">
+          <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+          <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+          <li><a class="dropdown-item" href="index.html" onclick="localStorage.clear()">Cerrar sesión</a></li>
+        </ul>
       </div>
     </div>
   </nav>
