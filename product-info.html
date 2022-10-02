@@ -64,16 +64,28 @@
           <h6><strong>Cantidad de vendidos</strong></h6>
           <p id="ventasProducto"></p>
         </div>
-
-        <div class="col p-1">
-          <h6><strong>Imágenes ilustrativas</strong></h6>
+        
+        <!-- Carrousel de imágenes del producto -->
+        <h6><strong>Imágenes ilustrativas</strong></h6>
+        <div class="col p-1 d-flex justify-content-center">
           <br>
-          <div class="row" id="imagenesProducto">
-            
+          <div id="carouselControls" class="carousel slide w-50" data-bs-ride="carousel">
+            <div class="carousel-inner" id="carousel-inner">
+              <!-- Aquí se insertan las imágenes del producto mediante JS -->
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
         </div>
         <hr>
         <h3>Comentarios</h3>
+
         <!-- caja de comentarios del producto -->
         <div id="comentarios">
           <div class="list-groups" id="listaComentarios">
@@ -98,6 +110,15 @@
 
           <input class="btn btn-primary d-block mt-3"  id="btnComment" type="button" value="Enviar">
         </form>
+        <hr>
+        <!-- Sección de productos relacionados -->
+        <div class="container">
+          <div class="row gy-3" id="relatedProducts">
+            <h4>Productos relacionados:</h4>
+            
+          </div>
+
+        </div>
 
       </div>
     </div>
@@ -123,6 +144,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
+  <script src="js/products.js"></script>
 </body>
 
 </html>
