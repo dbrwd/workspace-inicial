@@ -27,14 +27,23 @@ function showProductData(data){
 
     for(let i = 0; i < data.images.length; i++){
 
+        if (i === 0) {
+            imgs += `
+            <div class="carousel-item active">
+                <img src="${data.images[i]}" class="d-block w-100" alt="product-img">
+            </div>`;
+        }
+
         imgs += `
-        <div class="col-md-3 mb-3">
-            <img src="`+data.images[i]+`" alt="product_image" class="img-thumbnail">
+        <div class="carousel-item">
+            <img src="${data.images[i]}" class="d-block w-100" alt="product-img">
         </div>`;
 
     };
 
-    document.getElementById("imagenesProducto").innerHTML = imgs;
+    document.getElementById("carousel-inner").innerHTML += imgs;
+
+    relatedProducts(data.relatedProducts, localStorage.getItem("p-id"));
     
 }
 
@@ -99,3 +108,26 @@ function enviarComentario() {
     </div>`;
 
 }
+
+// Función que se encarga de mostrar los productos relacionados en la página.
+function relatedProducts(list,id){
+
+    let relatedProducts = "";
+
+    for(let i = 0; i < list.length; i++){
+
+        relatedProducts += `
+        <div class="card m-1" style="width: 18rem;" id="${list[i].id}" onclick="storageID(this.id)">
+              <img class="card-img-top" src="${list[i].image}" alt="Card image cap">
+              <div class="card-body text-center">
+                <p class="card-text">${list[i].name}</p>
+              </div>
+            </div>`;
+
+    };
+
+    document.getElementById("relatedProducts").innerHTML += relatedProducts;
+
+}
+
+
