@@ -37,8 +37,86 @@
   </nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <div class="site-header text-center mt-4">
+        <h1>Carrito de compras</h1>
+      </div>
+      
+      <div class="row justify-content-md-center">
+        
+        <div class="col-md-9 order-md-1">
+          <h4 class="my-4">Articulos a comprar</h4>
+          <table class="w-100">
+            <tr style="border-bottom: 1px solid #000;">
+              <th></th>
+              <th>Nombre</th>
+              <th>Costo</th>
+              <th>Cantidad</th>
+              <th>Subtotal</th>
+            </tr>
+            <tr id="cartData">
+              <!-- Aquí va la información del carrito -->
+            </tr>  
+          </table>
+
+          <div class="dropdown-divider"></div>
+
+          <div class="col-md-9 order-md-1">
+            <h4 class="my-4">Tipo de Envio</h4>
+
+            <div class="custom-control custom-radio">
+              <input id="premiumradio" name="shipmentType" type="radio" class="custom-control-input" required="">
+              <label class="custom-control-label" for="premiumradio">Premium 2 a 5 días (15%)</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input id="expressradio" name="shipmentType" type="radio" class="custom-control-input" required="">
+              <label class="custom-control-label" for="expressradio">Express 5 a 8 días (7%)</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input id="standardradio" name="shipmentType" type="radio" class="custom-control-input" checked="" required="">
+              <label class="custom-control-label" for="standardradio">Estándar 12 a 15 días (5%)</label>
+            </div>
+            <div class="row">
+            </div>
+          </div>
+
+          <div class="col-md-9 order-md-1">
+            <h4 class="my-4">Dirección de envío</h4>
+
+            <form class="needs-validation" id="address-info">
+              <div class="row">
+                <div class="col-md-7 mb-3">
+                  <label for="address-street">Calle</label>
+                  <input type="text" class="form-control" id="address-street" value="" name="address-street">
+                  <div class="invalid-feedback">
+                    Ingrese una calle
+                  </div>
+                </div>
+
+                <div class="col-md-5 mb-3">
+                  <label for="address-number">Número</label>
+                  <input type="text" class="form-control" id="address-number" value="" name="address-number">
+                  <div class="invalid-feedback">
+                    Ingrese un número
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-7 mb-3">
+                  <label for="address-corner">Esquina</label>
+                  <input type="text" class="form-control" id="address-corner" value="" name="address-corner">
+                  <div class="invalid-feedback">
+                    Ingrese una esquina
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <input class="btn btn-success" type="submit" value="Confirmar compra" onclick="alert('Próximamente!')">
+
+        </div>
+        
       </div>
     </div>
   </main>
