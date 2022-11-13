@@ -36,7 +36,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav w-100 justify-content-between">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
+            <a class="nav-link" href="postLoginIndex.html">Inicio</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="categories.html">Categorías</a>
@@ -52,8 +52,65 @@
   </nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+
+      <div class="d-flex justify-content-between">
+        <h1 class="site-header mt-4">Perfil</h1>
+        <img class="img-thumbnail m-2" id="profile-img" alt="Foto de perfil" width="100px">
+      </div>
+
+      <div class=" w-75 my-4 mx-auto">
+
+        <form class="form-setting needs-validation" novalidate>
+
+          <div class="d-md-flex justify-content-between mx-auto">
+            <fieldset  class="col-md-5">
+
+              <label for="first-name">Primer Nombre*</label>
+              <input type="text" class="form-control mb-3" id="first-name" name="first-name" required="">
+              <div class="invalid-feedback">
+                Ingrese su nombre
+              </div>
+          
+              <label for="first-lastname">Primer Apellido*</label>
+              <input type="text" class="form-control mb-3" id="first-lastname" name="first-lastname" required="">
+              <div class="invalid-feedback">
+                Ingrese su primer apellido
+              </div>
+          
+              
+              <label for="email">Correo Electrónico*</label>
+              <input type="email" class="form-control mb-3" id="email" name="email" required="">
+              <div class="invalid-feedback">
+                Ingrese un email válido
+              </div>
+
+
+              <label for="contact-tel">Teléfono de contacto</label>
+              <input type="tel" class="form-control" id="contact-tel" name="contact-tel">
+        
+            </fieldset>
+
+            <fieldset class="col-md-5">
+
+              <label for="second-name">Segundo Nombre</label>
+              <input type="text" class="form-control mb-3" id="second-name" name="second-name">
+
+              <label for="second-lastname">Segundo Apellido</label>
+              <input type="text" class="form-control mb-3" id="second-lastname" name="second-lastname">
+
+              <label for="profile-photo">Subir una foto</label>
+              <input type="file" name="profile-photo" accept="image/*" id="profile-photo">
+
+            </fieldset>
+          </div>
+
+
+          <div class="dropdown-divider my-5"></div>
+
+          <button type="submit" class="btn btn-primary">Guardar datos</button>
+
+        </form>
+
       </div>
     </div>
   </main>
@@ -70,6 +127,30 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/my-profile.js"></script>
+  <script>
+    (function () {
+      'use strict'
+
+      // Seleccion de todos los forms que queremos aplicar validacion custom de bootstrap
+      var forms = document.querySelectorAll('.needs-validation')
+
+      // Loop entre ellos, validacion si esta todo correcto o no acompañado de las alertas de error o exito
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }else{
+              form.classList.remove('was-validated')
+            }
+
+            form.classList.add('was-validated')
+            almacenarDatosPerfil();
+          }, false)
+        })
+    })()
+  </script>
 </body>
 
 </html>
