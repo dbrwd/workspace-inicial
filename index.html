@@ -26,19 +26,26 @@
 
       <h3>Inicio de sesión</h3>
 
-      <form action="#" id="login-form" class="form-setting text-muted" method="post">
+      <form action="/postLoginIndex.html" class="form-setting needs-validation" novalidate>
 
-        <!-- Este div presentará un mensaje de error en caso de quedar campos vacíos -->
+        <!-- Este div mostrará un mensaje de error en caso de quedar campos vacíos -->
         <div id="empty-fields">
           <p id="error-empty"></p>
         </div>
 
         <label for="email-login">Email</label>
-        <input type="email" name="email" id="email-login" placeholder="Ingrese su email">
-        <label for="passwd-login">Contraseña</label>
-        <input type="password" name="password" id="passwd-login" placeholder="Ingrese su contraseña">
+        <input type="email" class="form-control" id="email-login" name="email" required="">
+          <div class="invalid-feedback">
+            Ingrese un email válido
+          </div>
 
-        <input type="button" id="login-Btn" value="Ingresar">
+        <label for="passwd-login">Contraseña</label>
+        <input type="password" class="form-control" minlength="8" maxlength="12" id="passwd-login" name="passwd-login" required="">
+          <div class="invalid-feedback">
+            Ingrese su contraseña
+          </div>
+
+        <button class="btn btn-primary my-3" id="btnLogin" type="submit" onclick="guardarEmail()">Ingresar</button>
 
       </form>
 
@@ -63,6 +70,30 @@
   </footer>
   <script src="js/login.js"></script>
   <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script>
+    (function () {
+      'use strict'
+
+      // Seleccion de todos los forms que queremos aplicar validacion custom de bootstrap
+      var forms = document.querySelectorAll('.needs-validation')
+
+      // Loop entre ellos, validacion si esta todo correcto o no acompañado de las alertas de error o exito
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }else{
+              form.classList.remove('was-validated')
+              
+            }
+
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })()
+  </script>
 </body>
 
 </html>
